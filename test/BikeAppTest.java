@@ -50,23 +50,30 @@ public class BikeAppTest {
 
         }
 
-
-
-    @Test
-    public void testThatBikeCanDecelerate(){
-
-
-
-    }
-
     @Test
     public void testThatBikeCannotDecelerateWhenBikeIsOff(){
         BikeApp myBikeApp = new BikeApp();
         myBikeApp.itIsOff();
         assertEquals(0, myBikeApp.decelerate());
 
-
     }
 
+    @Test
+    public void testThatBikeCanDecelerate(){BikeApp myBikeApp = new BikeApp();
+        myBikeApp.turnBikeOn();
+        myBikeApp.setGear(1);
+        myBikeApp.setSpeed(15);
+        assertEquals(14,myBikeApp.decelerate());
+        myBikeApp.setGear(2);
+        myBikeApp.setSpeed(24);
+        assertEquals(22, myBikeApp.decelerate());
+        myBikeApp.setGear(3);
+        myBikeApp.setSpeed(35);
+        assertEquals(32, myBikeApp.decelerate());
+        myBikeApp.setGear(4);
+        myBikeApp.setSpeed(44);
+        assertEquals(40, myBikeApp.decelerate());
+
+    }
 
 }

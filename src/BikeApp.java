@@ -56,4 +56,24 @@ public class BikeApp {
                 return 0;
             }
         }
+
+    public int decelerate() {
+        if (bikeIsOn == true) {
+            if (gear == 1 && speed <= 20 && speed >= 1) {
+                speed -= 1;
+            } else if (gear == 2 && speed <= 30 && speed >= 21) {
+                speed -= 2;
+            } else if (gear == 3 && speed <= 40 && speed >= 31) {
+                speed -= 3;
+            }
+            else if (gear == 4 && speed >=41 ) {
+                speed -= 4;
+            }
+            return speed;
+        }
+        else {
+
+            return 0;
+        }
+    }
 }
